@@ -1,0 +1,13 @@
+erpcommercial:
+    resource: "@erpcommercialBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+client:
+    resource: "@clientBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

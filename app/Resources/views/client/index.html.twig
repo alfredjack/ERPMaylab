@@ -1,0 +1,135 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<style type="text/css">
+    ul {
+  list-style-type: none;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="main-inner">
+        <div class="container">
+<div class="row">
+
+ 
+<div class="span12">
+
+ 
+
+ 
+<div class="widget widget-table action-table">
+<div class="widget-header"> <i class="icon-th-list"></i>
+<h3>Les 10 derniers services</h3>
+</div>
+ 
+<div class="widget-content">
+<h1>client list</h1>
+
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+      
+                <th>Nom du tiers</th>
+
+
+         
+   
+                <th>Telephone</th>
+                
+                <th>Fax</th>
+                <th>Forme juridique</th>
+      
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for client in clients %}
+            <tr>
+               <td>{{ client.nomclient }}</td>
+  
+     
+                <td>{{ client.telephone }}</td>
+
+ 
+                <td>{{ client.fax }}</td>
+                <td>{{ client.formejuridique }}</td>
+      
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('client_show', { 'id': client.id }) }}">Afficher</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('client_edit', { 'id': client.id }) }}">Modifier</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('client_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th> Réferance </th>
+<th> Client</th>
+<th class="td-actions"> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 556446486486</td>
+<td> Profasud </td>
+<td class="td-actions"><a href="javascript:;" class="btn btn-small btn-success"><i class="btn-icon-only icon-ok"> </i></a><a href="javascript:;" class="btn btn-primary btn-small"><i class="btn-icon-only icon-search"> </i></a></td>
+</tr>
+<tr>
+<td>54646468468468 </td>
+<td> Polina </td>
+<td class="td-actions"><a href="javascript:;" class="btn btn-small btn-success"><i class="btn-icon-only icon-ok"> </i></a><a href="javascript:;" class="btn btn-primary btn-small"><i class="btn-icon-only icon-search"> </i></a></td>
+</tr>
+<tr>
+<td> 556446486486</td>
+<td> Profasud </td>
+<td class="td-actions"><a href="javascript:;" class="btn btn-small btn-success"><i class="btn-icon-only icon-ok"> </i></a><a href="javascript:;" class="btn btn-primary btn-small"><i class="btn-icon-only icon-search"> </i></a></td>
+</tr>
+<tr>
+<td>54646468468468 </td>
+<td> Polina </td>
+<td class="td-actions"><a href="javascript:;" class="btn btn-small btn-success"><i class="btn-icon-only icon-ok"> </i></a><a href="javascript:;" class="btn btn-primary btn-small"><i class="btn-icon-only icon-search"> </i></a></td>
+</tr>
+<tr>
+<td> 556446486486</td>
+<td> Profasud </td>
+<td class="td-actions"><a href="javascript:;" class="btn btn-small btn-success"><i class="btn-icon-only icon-ok"> </i></a><a href="javascript:;" class="btn btn-primary btn-small"><i class="btn-icon-only icon-search"> </i></a></td>
+</tr>
+<tr>
+<td>54646468468468 </td>
+<td> Polina </td>
+<td class="td-actions"><a href="javascript:;" class="btn btn-small btn-success"><i class="btn-icon-only icon-ok"> </i></a><a href="javascript:;" class="btn btn-primary btn-small"><i class="btn-icon-only icon-search"> </i></a></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+ 
+</div>
+ 
+
+ 
+</div>
+ 
+</div>
+ 
+</div>
+          
+</div>
+
+{% endblock %}
